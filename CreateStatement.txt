@@ -1,0 +1,115 @@
+
+CREATE TABLE Program
+  (Program_Code VARCHAR(10) NOT NULL,
+  Program_Name VARCHAR(30) NOT NULL,
+  Program_Duration NUMBER NOT NULL,
+  Program_Description VARCHAR(100) NOT NULL,
+  CONSTRAINT Program_PK PRIMARY KEY (Program_Code)
+  );
+
+ CREATE TABLE Student
+  (Student_ID VARCHAR(10) NOT NULL,
+  Student_Name VARCHAR(30) NOT NULL,
+  Address VARCHAR(30) NOT NULL,
+  Phone_No VARCHAR(10) NOT NULL UNIQUE,
+  Email VARCHAR(30) NOT NULL UNIQUE,
+  Program_Code VARCHAR(10) NOT NULL,
+  CONSTRAINT Student_PK PRIMARY KEY (Student_ID),
+  CONSTRAINT Program_FK FOREIGN KEY (Program_Code) REFERENCES Program(Program_Code)
+ );
+
+CREATE TABLE Module
+  (Module_Code VARCHAR(10) Not Null,
+  Module_Title VARCHAR(30) NOT NULL,
+  Credits NUMBER NOT NULL,
+  Module_Description VARCHAR(100) NOT NULL,
+  CONSTRAINT Module_PK PRIMARY KEY (Module_Code)
+   );
+
+ CREATE TABLE Module_Student
+  (Module_Code VARCHAR(10) NOT NULL,
+  Student_ID VARCHAR(10) NOT NULL,
+  CONSTRAINT Mod_Std_PK PRIMARY KEY (Module_Code, Student_ID),
+   CONSTRAINT Module_FK FOREIGN KEY (Module_Code) REFERENCES Module(Module_Code),
+   CONSTRAINT Student_FK FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID)
+   );
+
+ CREATE TABLE Teacher
+  (Teacher_ID VARCHAR(10) NOT NULL,
+  Teacher_Name VARCHAR(30) NOT NULL,
+  Address VARCHAR(30) NOT NULL,
+  Phone VARCHAR(10) NOT NULL UNIQUE,
+  Email VARCHAR(30) NOT NULL UNIQUE,
+  CONSTRAINT Teacher_PK PRIMARY KEY (Teacher_ID)
+    );
+
+ CREATE TABLE Teacher_Module_Student
+  (Module_Code VARCHAR(10) NOT NULL,
+  Student_ID VARCHAR(10) NOT NULL,
+  Teacher_ID VARCHAR(10) NOT NULL,
+  CONSTRAINT Tea_Mod_Std_PK PRIMARY KEY (Module_Code, Student_ID, Teacher_ID),
+  CONSTRAINT Module_FK2 FOREIGN KEY (Module_Code) REFERENCES Module(Module_Code),
+  CONSTRAINT Student_FK2 FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID),
+   CONSTRAINT Teacher_FK FOREIGN KEY (Teacher_ID) REFERENCES Teacher(Teacher_ID)
+   );
+
+ CREATE TABLE Announcement
+  (Announcement_ID NUMBER NOT NULL,
+  Announcement_Title VARCHAR(20) NOT NULL,
+  Date_Posted DATE NOT NULL,
+  Announcement_Description VARCHAR(100) NOT NULL,
+  CONSTRAINT Ann_PK PRIMARY KEY (Announcement_ID)
+   );
+
+ CREATE TABLE Announcement_Mod_Std_Tea
+ (Module_Code VARCHAR(10) NOT NULL,
+ Student_ID VARCHAR(10) NOT NULL,
+ Teacher_ID VARCHAR(10) NOT NULL,
+ Announcement_ID NUMBER NOT NULL,
+ CONSTRAINT Ann_Mod_Std_Tea_PK PRIMARY KEY (Module_Code, Student_ID, Teacher_ID, Announcement_ID),
+ CONSTRAINT Module_FK3 FOREIGN KEY (Module_Code) REFERENCES Module(Module_Code),
+ CONSTRAINT Student_FK3 FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID),
+ CONSTRAINT Teacher_FK2 FOREIGN KEY (Teacher_ID) REFERENCES Teacher(Teacher_ID),
+ CONSTRAINT Ann_FK FOREIGN KEY (Announcement_ID) REFERENCES Announcement(Announcement_ID)
+  );
+
+ CREATE TABLE Resources
+ (Resource_ID NUMBER NOT NULL,
+ Resource_Title VARCHAR(20) NOT NULL,
+ Resource_Duration_Days NUMBER NOT NULL,
+ Type VARCHAR(10) NOT NULL,
+ CONSTRAINT Res_PK PRIMARY KEY (Resource_ID)
+  );
+
+
+CREATE TABLE Resource_Module_Student
+  (Module_Code VARCHAR(10) NOT NULL,
+  Student_ID VARCHAR(10) NOT NULL,
+  Resource_ID NUMBER NOT NULL,
+  Completion_Status VARCHAR(10) NOT NULL,
+  Completion_Date DATE,
+  CONSTRAINT Res_Mod_Std_PK PRIMARY KEY (Module_Code, Student_ID, Resource_ID),
+  CONSTRAINT Module_FK4 FOREIGN KEY (Module_Code) REFERENCES Module(Module_Code),
+  CONSTRAINT Student_FK4 FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID),
+  CONSTRAINT Resource_FK FOREIGN KEY (Resource_ID) REFERENCES Resources(Resource_ID)
+   );
+
+CREATE TABLE Assessment
+  (Assessment_ID NUMBER NOT NULL,
+  Assessment_Title VARCHAR(30) NOT NULL,
+  Deadline DATE NOT NULL,
+  Weightage NUMBER NOT NULL,
+  CONSTRAINT Assessment_PK PRIMARY KEY (Assessment_ID)
+  ;
+
+ CREATE TABLE Result
+   (Module_Code VARCHAR(10) NOT NULL,
+   Student_ID VARCHAR(10) NOT NULL,
+  Assessment_ID NUMBER NOT NULL,
+  Marks_Obtained NUMBER,
+  Grade CHAR(1),
+  CONSTRAINT Assess_Mod_Std_PK PRIMARY KEY (Module_Code, Student_ID, Assessment_ID),
+  CONSTRAINT Module_FK5 FOREIGN KEY (Module_Code) REFERENCES Module(Module_Code),
+  CONSTRAINT Student_FK5 FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID),
+ CONSTRAINT Assessment_FK FOREIGN KEY (Assessment_ID) REFERENCES Assessment(Assessment_ID)
+  );

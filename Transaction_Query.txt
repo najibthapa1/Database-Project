@@ -1,0 +1,71 @@
+1.
+SELECT M.Module_Code, 
+M.Module_Title, 
+A.Assessment_Title, 
+A.Deadline 
+FROM Result R
+JOIN Assessment A ON R.Assessment_ID = A.Assessment_ID
+JOIN Module M ON R.Module_Code = M.Module_Code
+Where A.Deadline = (
+SELECT MAX(Deadline)
+FROM Assessment
+):
+
+
+2.
+SELECT *
+FROM (
+SELECT S.Student_ID,
+S.Student_Name,
+AVG(R.Marks_Obtained) AS Total_Score
+FROM Result R
+JOIN Student S ON R.Student_ID = S.Student_ID
+GROUP BY S.Student_ID, S.Student_Name
+ORDER BY Total_Score DESC)
+WHERE ROWNUM <=3;
+
+
+3.
+SELECT P.Program_Name, 
+COUNT(DISTINCT A.Assessment_ID) AS Total_Assessment,
+AVG(R.Marks_Obtained) AS Average_Score
+FROM Program P
+JOIN Student S ON P.Program_Code = S.Program_Code
+JOIN Result R ON S.Student_ID = R.Student_ID
+JOIN Assessment A ON A.Assessment_ID = R.Assessment_ID
+GROUP BY P.Program_Name
+ORDER BY P.Program_Name;
+
+
+4.
+SELECT S.Student_ID,
+S.Student_Name,
+R.Marks_Obtained
+FROM Result R 
+JOIN Student S ON R.Student_ID = S.Student_ID
+JOIN Module M ON R.Module_Code = M.Module_Code
+WHERE M.Module_Title = 'Database' AND R.Marks_Obtained > (
+SELECT AVG(R2.Marks_Obtained)
+FROM Result R2
+JOIN Module M2 ON M2.Module_Code = R2.Module_Code
+WHERE M2.Module_Title = ‘Database’
+);
+
+
+5.
+SELECT S.Student_ID,
+S.Student_Name,
+M.Module_Title,
+SUM(R.Marks_Obtained) AS Total_Marks,
+CASE
+WHEN SUM(R.Marks_Obtainer) >= 40 THEN 'Passed'
+ELSE 'Failed'
+END AS Remarks
+FROM Result R
+JOIN Student S ON R.Student_ID = S.Student_ID
+JOIN Module M ON R.Module_Code = M.Module_Code
+WHERE M.Module_Code = 'MR14'
+GROUP BY S.Student_ID, S.Student_Name, M.Module_Title
+ORDER BY S.Student_Name;
+
+ 

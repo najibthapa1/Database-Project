@@ -1,0 +1,457 @@
+
+
+For program:
+
+INSERT INTO Program (Program_Code, Program_Name, Program_Duration, Program_Description)	
+   VALUES	
+   ('CC101', 'B.Sc.Computing', 3, 'This IT program combines practical and theoretical learning to develop computing skills.');	
+	
+INSERT INTO Program (Program_Code, Program_Name, Program_Duration, Program_Description)	
+VALUES	
+('CN102', 'B.Sc.Networking', 3, 'This IT program combines practical and theoretical learning to develop networking skills.');	
+	
+INSERT INTO Program (Program_Code, Program_Name, Program_Duration, Program_Description)	
+  VALUES	
+  ('CM103', 'B.Sc.Multimedia', 3, 'This IT program focuses on multimedia design and development');	
+	
+ INSERT INTO Program (Program_Code, Program_Name, Program_Duration, Program_Description)	
+   VALUES	
+  ('CA104', 'B.Sc.AI', 3, 'This IT program focuses on robotics, artificial intelligence and machine learning');	
+	
+INSERT INTO Program (Program_Code, Program_Name, Program_Duration, Program_Description)	
+   VALUES	
+   ('BB101', 'B.Business Administration', 4, 'This program focuses on business analytics, finance, accounting, economics, and marketing');	
+	
+ INSERT INTO Program (Program_Code, Program_Name, Program_Duration, Program_Description)	
+  VALUES	
+   ('BH102', 'B.Hotel Management', 4, 'This program focuses on focuses on hospitality and travel field');	
+
+
+	
+For Student:
+
+INSERT INTO Student (Student_ID, Student_Name, Address, Phone_No, Email, Program_Code)
+VALUES
+('S248132', 'Alex Chhetri' , 'Jhapa', '9888888880', 'chh_alx12@gmail.com', 'CN102');
+
+INSERT INTO Student (Student_ID, Student_Name, Address, Phone_No, Email, Program_Code)
+VALUES
+('S248154', 'Reeya Gurung' , 'Pokhara', '9888888811', 'reeya12@gmail.com', 'CN102');
+
+ INSERT INTO Student (Student_ID, Student_Name, Address, Phone_No, Email, Program_Code)
+ VALUES
+ ('S248022', 'Rohan Karki' , 'Kathmandu', '9888888233', 'karkirohan@gmail.com', 'CC101');
+
+INSERT INTO Student (Student_ID, Student_Name, Address, Phone_No, Email, Program_Code)
+VALUES
+('S248144', 'Shivangi Thapa' , 'Kathmandu', '9888888333', 'shivgi@gmail.com', 'BB101');
+
+INSERT INTO Student (Student_ID, Student_Name, Address, Phone_No, Email, Program_Code)
+VALUES
+('S248111', 'Rubin Shrestha' , 'Bhaktapur', '9888881333', 'shtrubin@gmail.com', 'CM103');
+
+INSERT INTO Student (Student_ID, Student_Name, Address, Phone_No, Email, Program_Code)
+VALUES
+('S248109', 'Rubina Shrestha' , 'Palpa', '9888881133', 'rubina@gmail.com', 'CA104');
+
+INSERT INTO Student (Student_ID, Student_Name, Address, Phone_No, Email, Program_Code)
+VALUES
+('S248021', 'Prabin Ghimire' , 'Palpa', '9888801133', 'ghiprabin@gmail.com', 'CC101');
+
+INSERT INTO Student (Student_ID, Student_Name, Address, Phone_No, Email, Program_Code)
+VALUES
+ ('S248088', 'Pranita Shakya' , 'Kathmandu', '9888801156', 'shakya12@gmail.com', 'CC101');
+
+
+
+For module:
+
+ INSERT INTO Module (Module_Code, Module_Title, Credits, Module_Description)
+ VALUES
+ ('MD11', 'Database', 15, 'Includes an depth knowledge of database using Oracle SQL plus');
+
+ INSERT INTO Module (Module_Code, Module_Title, Credits, Module_Description)
+ VALUES
+ ('MP12', 'Programming', 30, 'Covers fundamental and advanced programming concepts.');
+
+ INSERT INTO Module (Module_Code, Module_Title, Credits, Module_Description)
+ VALUES
+ ('MF13', 'Finance', 15, 'Focuses on financial management and analysis.');
+
+INSERT INTO Module (Module_Code, Module_Title, Credits, Module_Description)
+VALUES
+('MR14', 'Robotics', 30, 'Explores the design and implementation of robotic systems.');
+
+INSERT INTO Module (Module_Code, Module_Title, Credits, Module_Description)
+VALUES
+('MI16', 'Internet of Things', 20, 'Covers IoT architecture, protocols, and applications.');
+
+ INSERT INTO Module (Module_Code, Module_Title, Credits, Module_Description)
+ VALUES
+ ('MA15', 'Account', 10, 'Provides knowledge on accounting principles and practices.');
+
+ INSERT INTO Module (Module_Code, Module_Title, Credits, Module_Description)
+ VALUES
+ ('MC17', 'Cyber Security', 15, 'Focuses on securing networks and systems against cyber threats.');
+
+ INSERT INTO Module (Module_Code, Module_Title, Credits, Module_Description)
+ VALUES
+ ('MN18', 'Network OS', 20, 'Teaches the configuration and management of network operating systems.');
+
+
+
+For Module_Student:
+
+INSERT INTO Module_Student (Module_Code, Student_ID)
+VALUES
+('MD11','S248132');
+
+INSERT INTO Module_Student (Module_Code, Student_ID)
+VALUES
+('MP12','S248154');
+
+INSERT INTO Module_Student (Module_Code, Student_ID)
+VALUES
+('MF13','S248144');
+
+ INSERT INTO Module_Student (Module_Code, Student_ID)
+ VALUES
+ (‘MR14','S248109');
+
+INSERT INTO Module_Student (Module_Code, Student_ID)
+VALUES
+('MI16','S248021');
+
+ INSERT INTO Module_Student (Module_Code, Student_ID)
+ VALUES
+ ('MN18','S248088');
+
+INSERT INTO Module_Student (Module_Code, Student_ID)
+VALUES
+('MA15','S248144');
+
+INSERT INTO Module_Student (Module_Code, Student_ID)
+VALUES
+('MC17','S248132');
+
+ INSERT INTO Module_Student (Module_Code, Student_ID)
+ VALUES
+ ('MC17','S248154');
+
+INSERT INTO Module_Student (Module_Code, Student_ID)
+VALUES
+('MD11','S248021');
+
+
+
+
+For Teacher:
+
+ INSERT INTO Teacher (Teacher_ID, Teacher_Name, Address, Phone, Email)
+ VALUES
+ ('T1102', 'Shyam Thapa', 'Lalitpur', '9800000022', 'shyam_islington@gmail.com');
+
+ INSERT INTO Teacher (Teacher_ID, Teacher_Name, Address, Phone, Email)
+ VALUES
+ ('T1103', 'Sita Rai', 'Bhaktapur', '9800000323', 'sita_islington@gmail.com');
+
+ INSERT INTO Teacher (Teacher_ID, Teacher_Name, Address, Phone, Email)
+ VALUES
+ ('T1104', 'Gita Shrestha', 'Pokhara', '9800000111', 'gita_islington@gmail.com');
+
+ INSERT INTO Teacher (Teacher_ID, Teacher_Name, Address, Phone, Email)
+ VALUES
+ ('T1105', 'Hari Basnet', 'Chitwan', '9800001122', 'hari_islington@gmail.com');
+
+INSERT INTO Teacher (Teacher_ID, Teacher_Name, Address, Phone, Email)
+VALUES
+ ('T1106', 'Nabin Bista', 'Dharan', '9800000556', 'nabin_islington@gmail.com');
+
+ INSERT INTO Teacher (Teacher_ID, Teacher_Name, Address, Phone, Email)
+ VALUES
+ ('T1107', 'Rita Gurung', 'Butwal', '9800000330', 'rita_islington@gmail.com');
+
+ INSERT INTO Teacher (Teacher_ID, Teacher_Name, Address, Phone, Email)
+ VALUES
+ ('T1108', 'Prakash Poudel', 'Biratnagar', '9800000099', 'prakash_islington@gmail.com');
+
+ INSERT INTO Teacher (Teacher_ID, Teacher_Name, Address, Phone, Email)
+ VALUES
+ ('T1101', 'Ram Khatri', 'Kathmandu', '9800000001', 'ram_islington@gmail.com');
+
+
+For Teacher_Module_Student:
+
+INSERT INTO Teacher_Module_Student (Module_Code, Student_ID, Teacher_ID)
+VALUES
+('MD11', 'S248021', 'T1101');
+
+ INSERT INTO Teacher_Module_Student (Module_Code, Student_ID, Teacher_ID)
+ VALUES
+ ('MP12', 'S248154', 'T1102');
+
+ INSERT INTO Teacher_Module_Student (Module_Code, Student_ID, Teacher_ID)
+ VALUES
+ ('MF13', 'S248144', 'T1103');
+
+INSERT INTO Teacher_Module_Student (Module_Code, Student_ID, Teacher_ID)
+VALUES
+('MR14', 'S248109', 'T1104');
+
+INSERT INTO Teacher_Module_Student (Module_Code, Student_ID, Teacher_ID)
+VALUES
+ ('MA15', 'S248144', 'T1105');
+
+INSERT INTO Teacher_Module_Student (Module_Code, Student_ID, Teacher_ID)
+ VALUES
+ ('MI16', 'S248021', 'T1106');
+
+INSERT INTO Teacher_Module_Student (Module_Code, Student_ID, Teacher_ID)
+VALUES
+ ('MC17', 'S248132', 'T1107');
+
+ INSERT INTO Teacher_Module_Student (Module_Code, Student_ID, Teacher_ID)
+ VALUES
+ ('MN18', 'S248088', 'T1108');
+
+
+
+
+For Announcement:
+
+ INSERT INTO Announcement (Announcement_ID, Announcement_Title, Date_Posted, Announcement_Description)
+ VALUES
+ (101, 'Class Update', TO_DATE('19-12-2024', 'DD-MM-YYYY'), 'There will not be lecture class tomorrow on 20 December.');
+
+ INSERT INTO Announcement (Announcement_ID, Announcement_Title, Date_Posted, Announcement_Description)
+ VALUES
+ (102, 'Teaching Material', TO_DATE('29-11-2024', 'DD-MM-YYYY'), 'The teaching material for database has been uploaded.');
+
+ INSERT INTO Announcement (Announcement_ID, Announcement_Title, Date_Posted, Announcement_Description)
+ VALUES
+ (103, 'Exam Time Table', TO_DATE('30-12-2024', 'DD-MM-YYYY'), 'The exam time table for this module has been uploaded.');
+
+INSERT INTO Announcement (Announcement_ID, Announcement_Title, Date_Posted, Announcement_Description)
+VALUES
+(104, 'Class Update', TO_DATE('31-01-2024', 'DD-MM-YYYY'), 'Tomorrow there will not be any class.');
+
+ INSERT INTO Announcement (Announcement_ID, Announcement_Title, Date_Posted, Announcement_Description)
+ VALUES
+ (105, 'Teacher Absent', TO_DATE('23-12-2024', 'DD-MM-YYYY'), 'Due to the absence of Mr.Basnet sir, the class will be handled by Mrs. Karki.');
+
+ INSERT INTO Announcement (Announcement_ID, Announcement_Title, Date_Posted, Announcement_Description)
+ VALUES
+ (106, 'Class Update', TO_DATE('23-11-2024', 'DD-MM-YYYY'), 'The class time table has been changed for tomorrow only.');
+
+ INSERT INTO Announcement (Announcement_ID, Announcement_Title, Date_Posted, Announcement_Description)
+ VALUES
+ (107, 'Tomorrow requirement', TO_DATE('02-01-2025', 'DD-MM-YYYY'), 'All students are required to bring laptops for tomorrow tutorial class.')
+
+INSERT INTO Announcement (Announcement_ID, Announcement_Title, Date_Posted, Announcement_Description)
+ VALUES
+(108, 'Admit Card', TO_DATE('04-05-2024', 'DD-MM-YYYY'), 'Students are requested to take the admit card from Student Service.');
+
+INSERT INTO Announcement (Announcement_ID, Announcement_Title, Date_Posted, Announcement_Description)
+ VALUES
+(109,'Mandatory Class', TO_DATE('27-04-2024', 'DD-MM-YYYY'), 'Students are requested to attend the mandatory class.'
+
+
+
+For Announcement_Mod_Std_Tea:
+
+INSERT INTO Announcement_Module_Student (Module_Code, Student_ID, Teacher_ID, Announcement_ID)
+ VALUES
+('MA15','S248144','T1105','101');
+
+ INSERT INTO Announcement_Module_Student (Module_Code, Student_ID, Teacher_ID, Announcement_ID)
+ VALUES
+('MC17', 'S248132', 'T1107','102');
+
+INSERT INTO Announcement_Module_Student (Module_Code, Student_ID, Teacher_ID, Announcement_ID)
+ VALUES
+('MD11', 'S248021','T1101', '103');
+
+ INSERT INTO Announcement_Module_Student (Module_Code, Student_ID, Teacher_ID, Announcement_ID)
+VALUES
+('MF13', 'S248144', 'T1103','104');
+
+INSERT INTO Announcement_Module_Student (Module_Code, Student_ID, Teacher_ID,Announcement_ID)
+VALUES
+('MI16', 'S248021', 'T1106','105');
+
+ INSERT INTO Announcement_Module_Student (Module_Code, Student_ID, Teacher_ID, Announcement_ID)
+VALUES
+('MN18', 'S248088','T1108', '106');
+
+ INSERT INTO Announcement_Module_Student (Module_Code, Student_ID, Teacher_ID, Announcement_ID)
+ VALUES
+('MP12', 'S248154', 'T1102','107');
+
+ INSERT INTO Announcement_Module_Student (Module_Code, Student_ID, Teacher_ID, Announcement_ID)
+ VALUES
+ ('MR1418', 'S248109','T1104', '108');
+
+ INSERT INTO Announcement_Module_Student (Module_Code, Student_ID, Teacher_ID, Announcement_ID)
+ VALUES
+ ('MR1418', 'S248109','T1104', '109');
+
+
+
+For Resource:
+
+ INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration_Days, Type)
+ VALUES
+ (101, 'Amazon Web Service', 30, 'Course');
+
+ INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration_Days, Type)
+ VALUES
+ (102, 'Educational Video', 5, 'Video');
+
+ INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration_Days, Type)
+ VALUES
+ (103, 'Robotics Basics', 15, 'Video');
+
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration_Days, Type)
+VALUES
+(104, 'SQL Quiz', 10, 'Quiz');
+
+ INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration_Days, Type)
+ VALUES
+ (105, 'Ethical Hacking', 10, 'Document');
+
+ INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration_Days, Type)
+ VALUES
+ (106, 'Network Security', 10, 'Document');
+
+ INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration_Days, Type)
+ VALUES
+ (107, 'Financial Accounting', 10, 'Case Study');
+
+
+
+For Resource_Module_Student:
+
+ INSERT INTO Resource_Module_Student (Module_Code, Student_ID, Resource_ID, Completion_Status, Completion_Date)
+ VALUES
+ ('MI16', 'S248021','101','Completed',TO_DATE('03-01-2025', 'DD-MM-YYYY'));
+
+INSERT INTO Resource_Module_Student (Module_Code, Student_ID, Resource_ID, Completion_Status, Completion_Date)
+VALUES
+ ('MA15', 'S248144','102','No',NULL);
+
+ INSERT INTO Resource_Module_Student (Module_Code, Student_ID, Resource_ID, Completion_Status, Completion_Date)
+ VALUES
+ ('MR14', 'S248109','103','Completed',TO_DATE('31-12-2024', 'DD-MM-YYYY'));
+
+ INSERT INTO Resource_Module_Student (Module_Code, Student_ID, Resource_ID, Completion_Status, Completion_Date)
+ VALUES
+ ('MD11', 'S248021','104','Completed',TO_DATE('29-12-2024', 'DD-MM-YYYY'));
+
+INSERT INTO Resource_Module_Student (Module_Code, Student_ID, Resource_ID, Completion_Status, Completion_Date)
+VALUES
+('MN18', 'S248088','105','Completed',TO_DATE('30-12-2024', 'DD-MM-YYYY'));
+
+ INSERT INTO Resource_Module_Student (Module_Code, Student_ID, Resource_ID, Completion_Status, Completion_Date)
+ VALUES
+ ('MC17', 'S248132','106','Completed',TO_DATE('25-12-2024', 'DD-MM-YYYY'));
+
+ INSERT INTO Resource_Module_Student (Module_Code, Student_ID, Resource_ID, Completion_Status, Completion_Date)
+ VALUES
+ ('MF13', 'S248144','107','Completed',TO_DATE('25-11-2024', 'DD-MM-YYYY'));
+
+ INSERT INTO Resource_Module_Student (Module_Code, Student_ID, Resource_ID, Completion_Status, Completion_Date)
+ VALUES
+ ('MP12', 'S248154','102','Completed',TO_DATE('28-11-2024', 'DD-MM-YYYY'));
+
+
+
+
+For Assessment:
+
+INSERT INTO Assessment (Assessment_ID, Assessment_Title, Deadline, Weightage)
+VALUES
+(101, 'Database Coursework',TO_DATE('29-12-2024', 'DD-MM-YYYY'), 100);
+
+INSERT INTO Assessment (Assessment_ID, Assessment_Title, Deadline, Weightage)
+VALUES
+(102, 'Circuit Designing',TO_DATE('02-01-2025', 'DD-MM-YYYY'), 100);
+
+INSERT INTO Assessment (Assessment_ID, Assessment_Title, Deadline, Weightage)
+VALUES
+(103, 'Case Study',TO_DATE('05-01-2025', 'DD-MM-YYYY'), 100);
+
+ INSERT INTO Assessment (Assessment_ID, Assessment_Title, Deadline, Weightage)
+ VALUES
+ (104, 'Logbook',TO_DATE('29-12-2025', 'DD-MM-YYYY'), 100);
+
+ INSERT INTO Assessment (Assessment_ID, Assessment_Title, Deadline, Weightage)
+ VALUES
+ (105, 'Logbook',TO_DATE('29-12-2025', 'DD-MM-YYYY'), 100);
+
+ INSERT INTO Assessment (Assessment_ID, Assessment_Title, Deadline, Weightage)
+ VALUES
+ (106, 'Final Report',TO_DATE('07-01-2025', 'DD-MM-YYYY'), 100);
+
+ INSERT INTO Assessment (Assessment_ID, Assessment_Title, Deadline, Weightage)
+ VALUES
+ (107, 'Presentation',TO_DATE('31-12-2024', 'DD-MM-YYYY'), 100);
+
+INSERT INTO Assessment (Assessment_ID, Assessment_Title, Deadline, Weightage)
+VALUES
+ (108, 'Research Paper',TO_DATE('02-01-2025', 'DD-MM-YYYY'), 100);
+
+ INSERT INTO Assessment (Assessment_ID, Assessment_Title, Deadline, Weightage)
+ VALUES
+ (109, 'SQL Queries',TO_DATE('11-01-2025', 'DD-MM-YYYY'), 100);
+
+
+
+For Result
+
+INSERT INTO Result (Module_Code, Student_ID, Assessment_ID, Marks_Obtained, Grade)
+VALUES
+('MD11','S248021','101',80,'A');
+
+ INSERT INTO Result (Module_Code, Student_ID, Assessment_ID, Marks_Obtained, Grade)
+ VALUES
+ ('MI16','S248021','102',80,’A’);
+
+ INSERT INTO Result (Module_Code, Student_ID, Assessment_ID, Marks_Obtained, Grade)
+ VALUES
+ ('MR14','S248109','103',30, NULL);
+
+ INSERT INTO Result (Module_Code, Student_ID, Assessment_ID, Marks_Obtained, Grade)
+ VALUES
+ ('MN18','S248088','104',60,'B');
+
+INSERT INTO Result (Module_Code, Student_ID, Assessment_ID, Marks_Obtained, Grade)
+VALUES
+ ('MA15','S248144','105',60,'B');
+
+INSERT INTO Result (Module_Code, Student_ID, Assessment_ID, Marks_Obtained, Grade)
+VALUES
+('MC17','S248132','106',90,'A');
+
+ INSERT INTO Result (Module_Code, Student_ID, Assessment_ID, Marks_Obtained, Grade)
+ VALUES
+ ('MF13','S248144','107',90,'A');
+
+INSERT INTO Result (Module_Code, Student_ID, Assessment_ID, Marks_Obtained, Grade)
+ VALUES
+ ('MP12','S248154','108',50,'C');
+
+INSERT INTO Result (Module_Code, Student_ID, Assessment_ID, Marks_Obtained, Grade)
+ VALUES
+ ('MD11','S248088','109',80,'A');
+
+
+Update Result
+SET Grade ='F'
+WHERE Student_ID='S248109'
+AND Assessment_ID='103';
+
+Update Result
+SET Grade = NULL, Marks_Obtained=0
+WHERE Student_ID='S248088'
+AND Assessment_ID='109';
+

@@ -1,0 +1,25 @@
+SELECT * FROM Program;
+
+SELECT * FROM Student;
+
+SELECT * FROM Module;
+
+SELECT * FROM Module_Student;
+
+SELECT * FROM Teacher;
+
+SELECT * FROM Teacher_Module_Student;
+
+SELECT * FROM Announcement;
+
+SELECT * FROM Announcement_Mod_Std_Tea;
+
+SELECT * FROM Resources;
+
+SELECT * FROM Resource_Module_Student;
+
+SELECT * FROM Assessment;
+
+SELECT * FROM Result;
+
+

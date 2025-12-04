@@ -1,0 +1,64 @@
+1.
+SELECT P.Program_Code, P.Program_Name, COUNT(S.Student_ID) AS Total_Students
+FROM
+Program P
+LEFT JOIN 
+Student S
+ON 
+P.Program_Code = S.Program_Code
+GROUP BY P.Program_Code, P.Program_Name;
+
+2.
+SELECT AB.Module_Code, M.Module_Title, A.Announcement_ID, A.Announcement_Title, A.Date_Posted, AB.Teacher_ID, A.Announcement_Description
+FROM
+Announcement A
+JOIN
+Announcement_Mod_Std_Tea AB
+ON
+A.Announcement_ID = AB.Announcement_ID
+JOIN
+Module M
+ON
+AB.Module_Code = M.Module_Code
+WHERE
+M.Module_Code = 'MR14'
+AND
+A.Date_Posted BETWEEN TO_DATE ('01-05-2024', 'DD-MM-YYYY') AND TO_DATE ('28-05-2024', 'DD-MM-YYYY');
+
+
+3.
+SELECT M.Module_Code, M.Module_Title, M.Module_Description, COUNT(R.Resource_ID) AS Total_Resource_Uploaded
+FROM
+Module M
+JOIN
+Resource_Module_Student R
+ON
+M.Module_Code = R.Module_Code
+WHERE
+M.Module_Title LIKE 'D%'
+GROUP BY  M.Module_Code, M.Module_Title, M.Module_Description;
+
+
+4.
+SELECT S.Student_Name, P.Program_Name, M.Module_Title, A.Assessment_Title
+FROM
+Student S
+JOIN 
+Program P
+ON
+S.Program_Code = P.Program_Code
+JOIN Result R ON S.Student_ID = R.Student_ID AND R.Module_Code = 'MD11'
+JOIN Assessment A ON R.Assessment_ID = A.Assessment_ID
+JOIN Module M ON R.Module_Code = M.Module_Code
+WHERE R.Grade IS NULL;
+
+
+5.
+SELECT T.Teacher_Name, COUNT(M.Module_Code) As Total_Module
+FROM Teacher T
+JOIN Teacher_Module_Student TMS ON T.Teacher_ID = TMS.Teacher_ID
+JOIN Module M ON TMS.Module_Code = M.Module_Code
+GROUP BY T.Teacher_ID, T.Teacher_Name
+HAVING COUNT(M.Module_Code) > 1;
+
+

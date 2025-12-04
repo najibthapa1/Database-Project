@@ -1,0 +1,23 @@
+DROP TABLE Result;
+
+DROP TABLE Assessment;
+
+DROP TABLE Resource_Module_Student;
+
+DROP TABLE Resources;
+
+DROP TABLE Announcement_Mod_Std_Tea;
+
+DROP TABLE Announcement;
+
+DROP TABLE Teacher_Module_Student;
+
+DROP TABLE Teacher;
+
+DROP TABLE Module_Student;
+
+DROP TABLE Module;
+
+DROP TABLE Student;
+
+DROP TABLE Program;
